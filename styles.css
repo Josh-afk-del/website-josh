@@ -28,7 +28,8 @@ body {
   overflow-x: hidden;
 }
 
-body.nav-open {
+body.nav-open,
+body.modal-open {
   overflow: hidden;
 }
 
@@ -51,7 +52,10 @@ a {
 
 button:focus-visible,
 a:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--signal);
   outline-offset: 4px;
 }
@@ -719,6 +723,154 @@ details p {
   color: rgba(245, 241, 232, 0.68);
 }
 
+.thanks-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.thanks {
+  min-height: 74vh;
+  display: grid;
+  align-content: center;
+  gap: 22px;
+  padding-top: 120px;
+}
+
+.thanks h1 {
+  max-width: 780px;
+}
+
+.thanks p {
+  max-width: 620px;
+  color: rgba(245, 241, 232, 0.78);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: var(--paper);
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 13, 12, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.modal-panel {
+  position: relative;
+  width: min(100%, 720px);
+  max-height: min(88vh, 820px);
+  overflow-y: auto;
+  padding: clamp(24px, 4vw, 44px);
+  background: var(--charcoal);
+  border: 1px solid var(--white-line);
+  box-shadow: var(--shadow);
+}
+
+.modal-panel h2 {
+  margin-bottom: 22px;
+  font-size: clamp(2.4rem, 8vw, 4.8rem);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--white-line);
+  background: transparent;
+  color: var(--paper);
+  font: inherit;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.consultation-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-hidden {
+  display: none;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.consultation-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.consultation-form label span {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(245, 241, 232, 0.28);
+  border-radius: 0;
+  background: rgba(245, 241, 232, 0.08);
+  color: var(--paper);
+  font: inherit;
+  padding: 12px 14px;
+}
+
+.consultation-form select {
+  appearance: auto;
+}
+
+.consultation-form option {
+  color: var(--ink);
+}
+
+.consultation-form textarea {
+  resize: vertical;
+}
+
+.consultation-form ::placeholder {
+  color: rgba(245, 241, 232, 0.5);
+}
+
+.consultation-form .button {
+  margin-top: 4px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.form-note {
+  margin: 0;
+  color: rgba(245, 241, 232, 0.68);
+  font-size: 0.92rem;
+}
+
 @media (max-width: 1040px) {
   .domain-grid,
   .process-list {
@@ -898,6 +1050,20 @@ details p {
 
   .footer-copy {
     text-align: left;
+  }
+
+  .modal {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .modal-panel {
+    max-height: 92vh;
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 }
 

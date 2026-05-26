@@ -36,7 +36,7 @@
         <a href="#programs">Programs</a>
         <a href="#about">About</a>
         <a href="#process">Process</a>
-        <a class="nav-cta" href="mailto:info@joshroche.com">Start</a>
+        <a class="nav-cta" href="#consultation-form" data-consultation-open>Start</a>
       </nav>
     </header>
 
@@ -58,7 +58,7 @@
           </h1>
           <p class="hero-copy">Josh Roche works with high-performing individuals and groups to develop body, mind, identity, and purpose as one integrated system, so excellence becomes sustainable instead of extractive.</p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="mailto:info@joshroche.com">Book a consultation</a>
+            <a class="button button-primary" href="#consultation-form" data-consultation-open>Book a consultation</a>
             <a class="button button-secondary" href="#programs">View programs</a>
           </div>
         </div>
@@ -250,7 +250,7 @@
           <p class="eyebrow">Start The Journey</p>
           <h2 id="cta-title">Ready to build your next level without burning down the one you already have?</h2>
           <p>Send Josh a note about where you are, what you are training for, and what feels stuck. The first step is a simple consultation.</p>
-          <a class="button button-primary" href="mailto:info@joshroche.com">info@joshroche.com</a>
+          <a class="button button-primary" href="#consultation-form" data-consultation-open>Book a consultation</a>
         </div>
         <div class="cta-media" aria-hidden="true">
           <img src="valentinmakes_httpss.mj.runbEcnmCtaIXM_a_spiritual_compositio_da6352c6-4a48-4e13-ac46-6893f60971fb_0.png" alt="">
@@ -273,6 +273,64 @@
         <p>&copy; 2026 Josh Roche. All rights reserved.</p>
       </div>
     </footer>
+
+    <div class="modal" id="consultation-form" role="dialog" aria-modal="true" aria-labelledby="consultation-title" hidden data-consultation-modal>
+      <div class="modal-backdrop" data-consultation-close></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" type="button" aria-label="Close consultation form" data-consultation-close>&times;</button>
+        <p class="eyebrow">Consultation Request</p>
+        <h2 id="consultation-title">Tell Josh what you are working toward.</h2>
+        <form class="consultation-form" action="https://formsubmit.co/info@joshroche.com" method="POST" data-consultation-form>
+          <input type="hidden" name="_subject" value="New consultation request from Josh Roche website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://josh-afk-del.github.io/website-josh/thanks.html">
+          <input class="form-hidden" type="text" name="_honey" tabindex="-1" autocomplete="off">
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input id="consultation-name" type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input id="consultation-email" type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+          <div class="form-grid">
+            <label>
+              <span>Phone</span>
+              <input id="consultation-phone" type="tel" name="phone" autocomplete="tel">
+            </label>
+            <label>
+              <span>Location / time zone</span>
+              <input id="consultation-location" type="text" name="location" autocomplete="address-level2">
+            </label>
+          </div>
+          <label for="consultation-goal">
+            <span>Main goal</span>
+            <select id="consultation-goal" name="goal" required>
+              <option value="">Choose one</option>
+              <option>Physical performance</option>
+              <option>Mindset and resilience</option>
+              <option>Burnout prevention</option>
+              <option>Purpose and direction</option>
+              <option>Team or group coaching</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>
+            <span>What is happening right now?</span>
+            <textarea id="consultation-message" name="message" rows="5" required placeholder="Share your goals, current challenge, and what you want support with."></textarea>
+          </label>
+          <label>
+            <span>Preferred contact time</span>
+            <input id="consultation-availability" type="text" name="availability" placeholder="Example: Weekday afternoons">
+          </label>
+          <button class="button button-primary" type="submit">Send consultation request</button>
+          <p class="form-note">Josh will receive your details and follow up directly.</p>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
