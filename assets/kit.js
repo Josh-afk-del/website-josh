@@ -10,7 +10,7 @@
  */
 window.KIT = {
   FORM_ID: "9744081",
-  API_KEY: "REPLACE_WITH_KIT_PUBLIC_API_KEY"
+  API_KEY: "jlzARMl3ETOc5wutr2l_6g"
 };
 
 /**
@@ -20,8 +20,8 @@ window.KIT = {
  */
 window.kitSubscribe = function kitSubscribe({ email, firstName = "", source = "" }) {
   if (!email) return Promise.resolve(false);
-  if (!window.KIT.FORM_ID || window.KIT.FORM_ID.indexOf("REPLACE_WITH") === 0) {
-    console.warn("[Kit] FORM_ID not set yet — skipping live subscribe. See assets/kit.js.");
+  if (!window.KIT.FORM_ID || !window.KIT.API_KEY || window.KIT.FORM_ID.indexOf("REPLACE_WITH") === 0 || window.KIT.API_KEY.indexOf("REPLACE_WITH") === 0) {
+    console.warn("[Kit] form connection is not set yet — skipping live subscribe. See assets/kit.js.");
     return Promise.resolve(false);
   }
   return fetch(`https://api.convertkit.com/v3/forms/${window.KIT.FORM_ID}/subscribe`, {
