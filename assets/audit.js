@@ -452,7 +452,7 @@ function buildResultHtml(data) {
       <p>Keep your profile. Use it as the map for your first block of work.</p>
       <button class="button button-ghost" type="button" data-pdf-result>Save as PDF</button>
     </div>
-    <p class="result-confirm"><strong>Check your inbox.</strong> ${escapeHtml(meta.next)}</p>
+    <p class="result-confirm"><strong>Check your inbox.</strong> Your profile and The Off Switch, a free mental training tool, are on the way. ${escapeHtml(meta.next)}</p>
     ${buildBridge(meta)}
   `;
 }
