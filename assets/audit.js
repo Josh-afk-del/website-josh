@@ -583,7 +583,7 @@ function showResult() {
   window.kitSubscribe({
     email: state.contact.email,
     firstName: state.contact.firstName,
-    source: "capacity-audit"
+    source: data.constraint === "emotional" ? "capacity-audit-emotional" : "capacity-audit"
   });
 }
 
